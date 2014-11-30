@@ -1,0 +1,62 @@
+article { 
+
+		text-align: left;
+		padding:  10px 10px 10px 50px;
+		}
+
+
+
+#search table {	
+	border-collapse: collapse;
+}		
+#search td {
+	text-align: center;
+	width: 300px;
+	font-size: 15px;
+	border-left: 1px dotted gray; 
+	border-right: 1px dotted gray;
+	padding: 20px 10px 10px 10px ;
+}				
+
+}
+
+
+section {
+				text-align:  center;
+				padding: 20px 10px 10px 10px;
+				
+			}	
+
+#result {
+	width: 100%;
+	padding: 20px;
+}
+.showPoet, .showPoem {
+        width: 300px;
+        text-align: left;
+        margin: 10px auto 20px auto;
+    }			
+#result a {
+	font-size: 18px;
+	text-shadow: 1px 1px 5px #666;
+	text-decoration: underline;
+}
+
+#result p {
+	font-size: 14px; 
+	color: #444;
+
+}					
+
+
+
+
+
+
+
+
+
+
+			
+
+			

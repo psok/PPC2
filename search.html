@@ -1,0 +1,372 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <title>Poetry &amp; Place | Search</title>
+
+    <!-- BOOTSTRAP CORE STYLE  -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONT AWESOME STYLE  -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- ANIMATE STYLE  -->
+    <link href="assets/css/animate.css" rel="stylesheet" />
+    <!-- FLEXSLIDER STYLE  -->
+    <link href="assets/css/flexslider.css" rel="stylesheet" />
+    <!-- CUSTOM STYLE  -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/searchstyle.css" rel="stylesheet" type="text/css">
+    <!-- GOOGLE FONTS  -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css' />
+     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css' />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+
+  <script src="modal/jquery.modal.js" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" href="modal/jquery.modal.css" type="text/css" media="screen" />
+
+  <!-- PAGINATION --> 
+  <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link href="assets/pagination/dataTables.bootstrap.css" rel="stylesheet" />
+
+    <script type="text/javascript" language="javascript" src="http://cdn.datatables.net/1.10-dev/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript" language="javascript" src="assets/pagination/dataTables.bootstrap.js"></script>
+    <!-- END OF PAGINATION --> 
+    <script type="text/javascript" charset="utf-8">
+
+        $(document).ready(function() {
+            $('#poets').dataTable();
+            
+        } );
+        $(document).ready(function() {
+            $('#poems').dataTable();
+            
+        } );
+
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+          e.attr('class', 'active');
+        })
+
+    	/*$(function(){
+        $('#bykeyword').on('click', function(){
+        	//console.log("getresult.php?q=" + $('#keyword').val());
+            $.ajax({
+                url: "getresult.php?q=" + $('#keyword').val() + "&searchby=keyword",
+                success:function(d){
+                    $('#result').html(d);
+                }
+            });
+
+        });
+
+        $('#byauthor').on('change', function(){
+        	if($('#byauthor').val() != 'select') {
+        		console.log("getresult.php?q=" + $('#byauthor').val() + "&searchby=author");
+    	        $.ajax({
+    	            url: "getresult.php?q=" + $('#byauthor').val() + "&searchby=author",
+    	            success:function(d){
+    	                $('#result').html(d);
+    	            }
+    	        });
+        	}
+
+        });
+
+        $('#bytitle').on('change', function(){
+        	if($('#bytitle').val() != 'select') {
+        		console.log("getresult.php?q=" + $('#bytitle').val() + "&searchby=title");
+    	        $.ajax({
+    	            url: "getresult.php?q=" + $('#bytitle').val() + "&searchby=title",
+    	            success:function(d){
+    	                $('#result').html(d);
+    	            }
+    	        });
+    	    }
+        });
+
+        
+        //Handle Click
+        $('#result').on('click', function(e){
+          if (e.target.tagName === "A"){
+                var $el = $(e.target);
+                var href = $el.attr('href');
+                console.log(href);
+                var selector = "a[href='"+href+"']";
+    	            e.preventDefault();
+                  	$(selector).modal({
+                    	fadeDuration: 250,
+                    	showClose: false
+    	            });
+          
+            }
+        });
+    });
+    */
+    </script>
+</head>
+<body>
+
+ <div class="navbar navbar-inverse set-radius-zero" >
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+
+        <span style="font-size:30px; color:#29A6A6;  font-weight:normal; font-family:Futura;">Poetry &amp; Place</span>
+        <br>
+         <span style="font-size:16px;  font-weight:normal; font-family:Calibri;">Chicago Through the Poet's Words</span>
+                </a>
+
+            </div>
+            <div class="right-div">
+    <form class="navbar-form" role="search">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+        </form>
+            </div>
+          
+        </div>
+    </div>
+    <!-- LOGO HEADER END-->
+    <section class="menu-section">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-12">
+                    <div class="navbar-collapse collapse ">
+                        <ul id="menu-top" class="nav navbar-nav navbar-right">
+                              <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About</a></li>
+								<li><a href="search.html">Browse</a></li>
+                                <li><a href="map.html">Maps</a></li>
+                                <li><a href="gallery.html">Gallery</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+     <!-- MENU SECTION END-->
+  
+    <div class="below-slideshow">
+         <div class="container">
+        <div class="row">
+            
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="txt-block">
+
+              
+									<h1 class="head-line"> Browse</h1>
+									
+                      </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <br />
+    <!-- BELOW SLIDESHOW SECTION END-->
+      <!--<div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+             <h3 class="tag-home2">  Poetry and Place: Chicago (PPC) is a digital repository that allows you to search and browse for poets, their respective poetry, and the locative elements that are the subjects of their works.</h3> 
+               <hr />
+                 </div>
+            </div>
+          </div>-->
+     <!-- TAG HOME SECTION END-->
+ 
+        <div class="container">    
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#browsepoets" data-toggle="tab">Browse Poets</a></li>
+              <li ><a href="#browsepoems" data-toggle="tab">Browse Poems</a></li>
+            </ul>  
+            <br />
+            <div class="tab-content">
+                <div id="browsepoets" class="tab-pane active">
+                    <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="poets">
+                        <thead>
+                            <tr>
+                                <th>Author</th>
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="odd">
+                                <td style="width:25%">Carl Sandburg</td>
+                                <td style="width:15%">1878-1967</td>
+                                <td style="width:50%">Gwendolyn Elizabeth Brooks was born on June 7, 1917, in Topeka, Kansas, the first child of David Anderson Brooks and Keziah Wims...</td>
+                                <td style="width:10%"><a href="Sandburg.html">Details</a></td>
+                            </tr>
+                            <tr class="even">
+                                <td>Frank Marshall Davis</td>
+                                <td>1905-1987</td>
+                                <td>Frank Marshall Davis was an American journalist, poet, political and labor movement activist, and businessman...</td>
+                                <td><a href="davis.html">Details</a></td>
+                            </tr>
+                            <tr class="odd">
+                                <td>Marge Piercy</td>
+                                <td>1936</td>
+                                <td>Marge Piercy is an American poet, novelist, and social activist...</td>
+                                <td><a href="piercy.html">Details</a></td>
+                            </tr>
+                            <tr class="even">
+                                <td>Brenda Cardenas</td>
+                                <td>N/A</td>
+                                <td>A native of Milwaukee, Wisconsin, Brenda C'rdenas is the author of two poetry collections...</td>
+                                <td><a href="cardenas.html">Details</a></td>
+                            </tr>
+                            <tr class="odd">
+                                <td>Lew Welch</td>
+                                <td>1926-1971</td>
+                                <td>Lewis Barrett "Lew" Welch, Jr. was an American poet associated with the Beat generation literary movement. Welch published and performed widely during the 1960s...</td>
+                                <td><a href="welch.html">Details</a></td>
+                            </tr>
+                            <tr class="even">
+                                <td>Phillip B. Williams</td>
+                                <td>1986</td>
+                                <td>Phillip B. Williams was born in Chicago, Illinois. He is the author of the chapbooks Bruised Gospels (Arts in Bloom Inc., 2011) and Burn (YesYes Books, 2013)...</td>
+                                <td><a href="williams.html">Details</a></td>
+                            </tr>
+                            <tr class="odd">
+                                <td>Gwendolyn Brooks</td>
+                                <td>1917-2000</td>
+                                <td>Gwendolyn Brooks is an American poet, novelist, and social activist...</td>
+                                <td><a href="BrooksPage.html">Details</a></td>
+                            </tr>
+                            <tr class="even">
+                                <td>Marianne Boruch</td>
+                                <td>1950</td>
+                                <td>Marianne Boruch is an American poet whose published work also includes essays on poetry, sometimes in relation to other fields...</td>
+                                <td><a href="boruch.html">Details</a></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <div id="browsepoems" class="tab-pane">
+                    <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="poems">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Description</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="odd">
+                                <td style="width:25%">Chicago"</td>
+                                <td style="width:20%">Carl Sandburg</td>
+                                <td style="width:40%"> HOG Butcher for the World,
+                                     Tool Maker, Stacker of Wheat,
+                                     Player with Railroads and the Nation's Freight Handler;...</td>
+                                <td style="width:15%"><a href="chicago.html">Details</a></td>
+                            </tr>
+                            <tr class="even">
+                                <td>"Chicago Congo"</td>
+                                <td>Frank Marshall Davis</td>
+                                <td>Chicago is an overgrown woman   
+      wearing her skyscrapers
+      like a necklace ...</td>
+                                <td><a href="chicagocongo.html">Details</a></td>
+                            </tr>
+                            <tr class="odd">
+                                <td>"Visiting a dead man on a summer day"</td>
+                                <td>Marge Piercy</td>
+                                <td>In flat America, in Chicago,
+Graceland cemetery on the German North Side...</td>
+                                <td><a href="avisit.html">Details</a></td>
+                            </tr>
+                            <tr class="even">
+                                <td>"At the Base of the Blues Tree: Una Ofrenda for Jimmy Davis, Chicago Blues Man"</td>
+                                <td>Brenda Cardenas</td>
+                                <td>The hands of this telling tree pull...</td>
+                                <td><a href="baseblues.html">Details</a></td>
+                            </tr>
+                            <tr class="odd">
+                                <td>"Chicago Poem"</td>
+                                <td>Lew Welch</td>
+                                <td>I lived here nearly 5 years before I could meet the middle western day with anything approaching Dignity. It's a place that lets you understand why the Bible is the way it is: Proud people cannot live here.</td>
+                                <td><a href="Chicagopoem.html">Details</a></td>
+                            </tr>
+                            <tr class="even">
+                                <td>Homan and Chicago Ave.</td>
+                                <td>Phillip B. Williams</td>
+                                <td>Cross the blood
+that quilts your busted lip
+with the tender tip...</td>
+                                <td><a href="homanandchicago.html">Details</a></td>
+                            </tr>
+                            <tr class="odd">
+                                <td>"kitchenette building"</td>
+                                <td>Gwendolyn Brooks</td>
+                                <td>We are things of dry hours and the involuntary plan,
+Grayed in, and gray. “Dream” makes a giddy sound, not strong...</td>
+                                <td><a href="kitchenette.html">Details</a></td>
+                            </tr>
+                            <tr class="even">
+                                <td>"Little Wife"</td>
+                                <td>Marianne Boruch</td>
+                                <td>They redid King Tut splendid,
+once stone-huge as this ...</td>
+                                <td><a href="littlewife.html">Details</a></td>
+                            </tr>
+                            <tr class="odd">
+                                <td>"We Real Cool"</td>
+                                <td>Gwendolyn Brooks</td>
+                                <td>The Pool Players. 
+        Seven at the Golden Shovel.
+
+            We real cool. We   ...</td>
+                                <td><a href="werealcool.html">Details</a></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    <div class="footer-sec">
+         <div class="container">
+
+             <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div style="text-align:center;padding:5px;">
+                             Copyright   &copy; PPC 2014. All rights reserved.
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </div>
+    <!--FOOTER SECTION END-->
+    <!-- WE PUT SCRIPTS AT THE END TO LOAD PAGE FASTER-->
+    <!--BOOTSTRAP SCRIPTS PLUGIN-->
+    <script src="assets/js/bootstrap.js"></script>
+     <!--WOW SCRIPTS PLUGIN-->
+    <script src="assets/js/wow.js"></script>
+     <!--FLEXSLIDER SCRIPTS PLUGIN-->
+    <script src="assets/js/jquery.flexslider.js"></script>
+     <!--CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
+</body>
+
+</html>
+

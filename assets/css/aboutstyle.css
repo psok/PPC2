@@ -1,0 +1,65 @@
+article { 
+
+		text-align: left;
+		padding:  10px 10px 10px 50px;
+		}
+
+
+
+#about table {	
+	border-collapse: collapse;
+}		
+#about td {
+	text-align: center;
+	width: 300px;
+	font-size: 15px;
+	border-left: 1px dotted gray; 
+	border-right: 1px dotted gray;
+	padding: 20px 10px 10px 10px ;
+}				
+
+#about .thumbnail {
+	-moz-border-radius: 200px/200px;
+    -webkit-border-radius: 200px 200px;
+    border-radius: 200px/200px; 
+    width:200px;
+    height:200px; 
+}
+
+#about .description {
+	vertical-align: top;
+	text-align: left;
+	height: 200px;
+	color: #000;
+	font-weight: 2em;
+}	
+
+#about .name {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: blue;
+}
+
+#about .position {
+	font-size: 15px; 
+	color: #888;
+	font-style: italic;
+	margin: 0px;
+}
+
+#about a {
+	text-align: center;
+	background:0;
+	text-decoration: none;
+	text-transform: none;
+	color: #000; 
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px dotted #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
