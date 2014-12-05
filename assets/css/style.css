@@ -15,7 +15,7 @@
  ============================================================ */
 
 body {
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Arial', sans-serif;
     font-size:20px;
 }
 
@@ -24,9 +24,10 @@ h1,h2,h4 {
 }
 .header1 {
 	color: black;
+  text-align: center;
 }
 .just-txt-div {
-    padding-bottom:30px;
+    padding-bottom: 30px;
     padding-top:30px;
 }
     .just-txt-div p {
@@ -34,13 +35,13 @@ h1,h2,h4 {
     }
 .head-line {
     font-weight:500;
-    text-align:center;
+    text-align: left;
     text-transform:uppercase;
     font-size:30px;
     font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 }
 .pad-set {
-    padding-top:50px;
+    padding-top: 50px;
      padding-bottom:50px;
 }
 .pad-top {
@@ -60,13 +61,13 @@ h1,h2,h4 {
     text-decoration:none;
     font-weight:500;
     padding: 25px 15px 25px 15px;
-    text-transform:uppercase;
+    text-transform: uppercase;
     font-size:16px;
     font-weight:900;
 
 }
 .menu-section {
-    background-color: #f7f7f7;
+    background-color: #29A6A6;
     border-bottom:5px solid #CECECE;
     width:100%
 }
@@ -74,7 +75,7 @@ h1,h2,h4 {
     background-color:#eeeeee;
 }
 .navbar-inverse {
-background-color: #FFF;
+background-color: #000;
 border-color: rgba(155, 153, 153, 0.23);
 
 }
@@ -82,6 +83,8 @@ border-color: rgba(155, 153, 153, 0.23);
 .navbar {
     min-height: 70px;
     margin-bottom: 0px;
+    
+
    
 }
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
@@ -131,18 +134,23 @@ border: 1px solid black;
     PAGE STYLES
  ============================================================ */
 .below-slideshow {
-    color:#fff;
-    background:#01a2a6;
-    padding-bottom:50px;
+    color:#000;
+    background:#eeeeee;
+    padding-bottom: 20px;
     
 }
-    .below-slideshow i {
-        padding-bottom:15px;
+    .below-slideshow img {
+        padding-bottom: 5px;
+
+
+
     }
     .below-slideshow .txt-block {
         
-        padding-top:50px;
+        padding-top:10px;
+        text-align: center;
     }
+
      .below-slideshow h4 {
         font-weight:800;
         font-size:20px;
@@ -150,6 +158,29 @@ border: 1px solid black;
     .below-slideshow p {
         padding-right:30px;
     }
+
+/* =============================================================
+    ABOUT PAGE STYLES
+ ============================================================ */
+
+.media {
+
+  padding-top: 15px;
+  padding-left: 20px;
+  font-size: 18px;
+}
+.media img {
+
+
+        padding-bottom: 8px;
+}
+
+
+
+
+
+
+
 .tag-home {
     padding-top:50px;
     padding-bottom:30px;
@@ -167,10 +198,10 @@ border: 1px solid black;
 	
 }
 a:link {
-	color: #4F4F4F;
+	color: #29A6A6;
 }
 a:visited {
-	color: #4F4F4F;
+	color: #29A6A6;
 }
 .parallax-like {
 margin-top: 20px;
@@ -208,8 +239,8 @@ min-height: 300px;
     margin-top:50px;
     padding-top:30px;
     color:#fff;
-    background:#01a2a6;
-    padding-bottom:20px;
+    background:#29A6A6;
+    padding-bottom: 30px;
     
 }
 .flexslider {
