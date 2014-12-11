@@ -3994,6 +3994,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle;
+    
   }
   .navbar-form .form-control {
     display: inline-block;
@@ -4003,6 +4004,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar-form .input-group {
     display: inline-table;
     vertical-align: middle;
+    float:right;
   }
   .navbar-form .input-group .input-group-addon,
   .navbar-form .input-group .input-group-btn,

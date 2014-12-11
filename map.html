@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -9,7 +9,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
     <title>Poetry &amp; Place| Map</title>
-   <script type="text/javascript" src="load.js"></script>
+   	<!--script type="text/javascript" src="load.js"></script>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
@@ -20,13 +20,238 @@
     <link href="assets/css/flexslider.css" rel="stylesheet" />
     <!-- CUSTOM STYLE  -->
     <link href="assets/css/style.css" rel="stylesheet" />
- <link href="assets/css/stylesheetmap.css" rel="stylesheet" />
-   
+	<link href="assets/css/stylesheetmap.css" rel="stylesheet" />
+    <!--MySpaces Styles-->
+    <link href="assets/css/myplaces.css" rel="stylesheet" />
+    <!-- Custom Scroll Bar Style Sheet -->
+    <link href="assets/css/mCustomScrollbar.css" rel="stylesheet"/>
+    
     <!-- GOOGLE FONTS  -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css' />
-     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css' />
+    <!--FOOTER SECTION END-->
+     <!--CORE SCRIPTS PLUGIN-->
+    <script type="text/javascript" src="assets/js/jquery-1.11.1.min.js"></script>
+     <!--BOOTSTRAP SCRIPTS PLUGIN-->    
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+     <!--WOW SCRIPTS PLUGIN-->
+    <script type="text/javascript" src="assets/js/wow.js"></script>
+     <!--FLEXSLIDER SCRIPTS PLUGIN-->
+    <script type="text/javascript" src="assets/js/jquery.flexslider.js"></script>
+     <!--CUSTOM SCRIPTS -->
+    <!--script type="text/javascript" src="assets/js/custom.js"></script>
+    
+    <!--Libraries-->
+    <script type="text/javascript" src="assets/js/lib/jsRender/jsrender.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/google-docs-simple-parser/google-docs-simple-parser.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=places,geometry&sensor=false"></script>
+    <!--Plugin-->
+    <script src="assets/js/lib/myCustomScrollbar/jquery.mCustomScrollbar.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.myplaces.min-1.0.js"></script>
+        <script>
+            $(document).ready(function() {
 
+                var places = 
+                [
+                    {
+                        "name": "Gwendolyn Brooks",
+                        "pagelink": "BrooksPage.html",
+                        "address": "Bronzeville",
+                        "shortDescription": "",
+                        "poem": "Kitchette Building",
+                        "year": "1963",
+                        "picture": "assets/img/brooks.jpg",
+                        "about":"Gwendolyn Elizabeth Brooks was born in 1917.She won the Pulitzer Prize for Poetry in 1950 and was appointed Poet Laureate of Illinois in 1968 and Poet Laureate Consultant in Poetry to the Library of Congress in 1985 ",
+                        "mapIcon": "assets/img/blue.png",
+                        "lat": 41.824897,
+                        "lng": -87.617769,
+                        "tags": ["Gwendolyn Brooks"]
+                    },
+                    {
+                        "name": "Brenda Cardenas",
+                        "pagelink": "cardenas.html",
+                        "address": "Back of the Yard",
+                        "shortDescription": "",
+                        "picture":"assets/img/cardenas.jpg",
+                        "about":"A native of Milwaukee, Wisconsin, Brenda Cárdenas is the author of two poetry collections, From the Tongues of Brick and Stone (Momotombo Press) and Boomerang (Bilingual Review Press), as well as the co-editor of Between the Heart and the Land / Entre el corazon y la tierra: Latina Poets in the Midwest.",
+                        "poem": "At The Base of the Blues",
+                        "year": "2009",
+                        "mapIcon": "assets/img/blue.png",
+                        "lat": 41.878684,
+                        "lng": -87.639443,
+                        "tags": ["Brenda Cardenas"]
+                    },
+                    {
+                        /*"id": "1",*/
+                        "name": "Marge Piercy",
+                        "pagelink": "piercy.html",
+                        "address": "Graceland Cemetery",
+                        "picture":"assets/img/piercy.jpg",
+                        "about": " Born in 1938, Piercy is  is an American poet, novelist, and social activist. She is the author of the New York Times bestseller Gone to Soldiers, a sweeping historical novel set during World War II.",
+                        "shortDescription": "",
+                        "poem": "Visiting A Dead Man On A Summer Day",
+                        "year": "1967",
+                        "mapIcon": "assets/img/blue.png",
+                        "lat": 41.954837,
+                        "lng": -87.661881,
+                        "tags": ["Marge Piercy"]
+                    },
+                    {
+                        /*"id": "1",*/
+                        "name": "Gwendolyn Brooks",
+                        "pagelink": "BrooksPage.html",
+                        "address": "Bronzeville, 47th Street",
+                        "shortDescription": "",
+                        "picture": "assets/img/brooks.jpg",
+                        "about":"Gwendolyn Elizabeth Brooks was born in 1917.She won the Pulitzer Prize for Poetry in 1950 and was appointed Poet Laureate of Illinois in 1968 and Poet Laureate Consultant in Poetry to the Library of Congress in 1985 ",
+                        "poem": "We Real Cool",
+                        "year": "1945",
+                        "mapIcon": "assets/img/blue.png",
+                        "lat": 41.781544,
+                        "lng": -87.635026,
+                        "tags": ["Gwendolyn Brooks"]
+                    },
+                    {
+                        /*"id": "1",*/
+                        "name": "Carl Sandburg",
+                        "pagelink": "Sandburg.html",
+                        "address": "Union Stock Yard",
+                        "shortDescription": "",
+                        "picture": "assets/img/sandburg.jpg",
+                        "about": "Carl Sandburg was an American writer and editor best known for poetry. He won three Pulitzer Prizes, two for his poetry and one for his biography of Abraham Lincoln.",
+                        "poem": "Chicago",
+                        "year":"1914",
+                        "mapIcon": "assets/img/blue.png",
+                        "lat": 41.818808,
+                        "lng": -87.648586,
+                        "tags": ["Carl Sandburg"]
+                    },
+                    {
+                        /*"id": "1",*/
+                        "name": "Frank Marshall Davis",
+                        "pagelink": "davis.html",
+                        "address": "YMCA",
+                        "shortDescription": "",
+                        "picture": "assets/img/davis.jpg",
+                        "about":"Frank Marshall Davis was an American journalist, poet, political and labor movement activist, and businessman.",
+                        "poem": "Congo",
+                        "year": "1935",
+                        "mapIcon": "assets/img/blue.png",
+                        "lat": 41.825629,
+                        "lng": -87.624571,
+                        "tags": ["Frank Marshall Davis"]
+                    },
+                    {
+                        /*"id": "1",*/
+                        "name": "Phillip B. Williams",
+                        "pagelink": "williams.html",
+                        "address": "Homan and Chicago",
+                        "shortDescription": "",
+                        "picture": "assets/img/williamsmap.jpg",
+                        "about":   "A native of Chicago, Williams" + 
+                                   "is the author of the chapbooks Bruised Gospels (Arts in Bloom Inc., 2011) and Burn (YesYes Books, 2013)."  + 
+                                   "Williams is a Cave Canem graduate and the poetry editor of the online journal Vinyl Poetry.",
+                        "poem": "Homan and Chicago",
+                        "year": "2012",
+                        "mapIcon": "assets/img/blue.png",
+                        "lat": 41.895433,
+                        "lng": -87.711042,
+                        "tags": ["Phillip B. Williams"]
+                    },
+                    {
+                        /*"id": "1",*/
+                        "name": "Marianne Boruch",
+                        "pagelink": "boruch.html",
+                        "address": "Oriental Institute",
+                        "shortDescription": "",
+                        "picture": "assets/img/boruchmap.jpg",
+                        "about":"Marianne Boruch is an American poet whose published work also includes essays on poetry, " +
+                                "sometimes in relation to other fields (music, visual art, ornithology, medicine, aviation, etc) " + 
+                                "and, most recently, a memoir about a hitchhiking trip taken in 1971.",
+                        "poem": "Little Wife",
+                        "year": "2011",
+                        "mapIcon": "assets/img/blue.png",
+                        "lat": 41.789228,
+                        "lng": -87.597462,
+                        "tags": ["Marianne Boruch"]
+                    },
+                    {
+                        /*"id": "1",*/
+                        "name": "Lew Welch",
+                        "pagelink": "welch.html",
+                        "address": "Chicago",
+                        "shortDescription": "",
+                        "picture": "assets/img/welch.jpg",
+                        "about":"Lewis Barrett, Lew,  Welch, Jr. was an American poet associated with the Beat generation literary movement. Welch published and performed widely during the 1960s.",
+                        "poem": "Chicago Poem",
+                        "year": "2012",
+                        "mapIcon": "assets/img/blue.png",
+                        "lat": 41.8781136,
+                        "lng": -87.6297982,
+                        "tags": ["Lew Welch"]
+                    }
+                ];
+
+                $("#Maps").myplaces({
+                    country: "USA",
+                    places: places,
+                    placeListTemplate: '<li><h1>{{:name}}</h1><h3>{{:address}}</h3><h5>{{:poem}}</h5><p>{{:shortDescription}}</p></li>',
+                    placeInfoTemplate: '#placeInfoTemplate',
+                    popUpMapTemplate: '#infowindowTemplate',
+                    onLoad: createSrollBar
+                    //onPlacesChange: callback,
+                    //onClickPlace: callback
+                });
+
+              function createSrollBar() {
+                    $(".myplaces-placesList, .myplaces-placeInfo").mCustomScrollbar({
+                        //etWidth: "30px",
+                        theme: "dark-thick",
+                        advanced: {
+                            updateOnContentResize: true
+                        }
+                    });
+                }
+            });
+        </script>
+        <script id="placeInfoTemplate" type="text/x-jsrender">
+                   <h3>Poet:</h3>
+                   <p> <a href= "{{:pagelink}}" >
+                   {{:name}} </a></p>
+                   <h3>About:</h3>
+                   <p><img class= "catimg" src="{{:picture}}" alt="{{:name}}"></p>
+                   <p> {{:about}}</p>
+                   <h3>Poem:</h3>
+                   <p>{{:poem}}</p>
+                    <h3>Year Published:</h3>
+                   <p>{{:year}}</p>
+                   <div class="myplaces-placeEmail">
+                   <h3>Address:</h3>
+                   <p>{{:address}}</p>
+                   </div>
+               </script>
+        <script id="infowindowTemplate" type="text/x-jsrender">
+                   <div class="myplaces-info">
+                   <strong>
+                   {{:name}}
+                   </strong>
+                   <br>
+                   {{:address}}
+                   </div>
+               </script>
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-36251023-1']);
+            _gaq.push(['_setDomainName', 'jqueryscript.net']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+    </script>
 </head>
 <body>
 
@@ -58,7 +283,7 @@
             </div>
           
         </div>
-    </div>
+ </div>
     <!-- LOGO HEADER END-->
     <section class="menu-section">
         <div class="container">
@@ -79,86 +304,49 @@
             </div>
         </div>
     </section>
-     <!-- MENU SECTION END-->
-  
-    <div class="below-slideshow">
-         <div class="container">
-        <div class="row">
-            
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="txt-block">
-<h1 class="head-line"> Map</h1>						
-                      </div>
-            </div>
-        </div>
-
-    </div>
-    </div>
-    <!-- BELOW SLIDESHOW SECTION END-->
-      <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-             <h3 class="tag-home2"> The map allows users to see the geolocations of significant points of interest mentioned or imagined in the collected poems.</h3> 
-                   <hr />
-             <h3><strong>Features</strong></h3>
-			<p>After clicking on a point, you will be able to see the title, date, and a link to the individual poem all through the map.</p>
-
-         
-                 </div>
-            </div>
-          </div>
-     <!-- TAG HOME SECTION END-->
- 
-        <div class="container">         
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-             <section id="googft-mapCanvas">
-	<script>loadScript();</script></section>
-	
-		<div id="MapLegend">
-		PPC</br>
-	</br>
-		Brooks = red</br>
-		Cardenas = yellow</br>	
-		Davis = purple</br>
-		Piercy = green</br>
-		Sandburg = blue</br></div>
-
-		
-</section>
-            </div>
-           
-        </div>
-             
-    </div>
-           
     
-      <!--SET-DIV SECTION END-->
- 
-   <div class="footer-sec">
-         <div class="container">
+     <!-- MENU SECTION END-->
+    <div class="below-slideshow">
+        <div class="container">
+            <div class="row">
 
- <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div style="text-align:center;padding:5px;">
-                 Copyright   &copy; PPC 2014. All rights reserved.
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="txt-block">
+                        <h1 class="head-line"> Map</h1>						
+                    </div>
                 </div>
             </div>
+        </div>
     </div>
-    </div>
+     
+    <!-- BELOW SLIDESHOW SECTION END-->
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <h3 class="tag-home2"> The map allows users to see the geolocations of significant points of interest mentioned or imagined in the collected poems.</h3> 
+                        <hr />
+                  <h3><strong>Features</strong></h3>
+                             <p>After clicking on a point, you will be able to see the title, date, and a link to the individual poem all through the map.</p>
+              </div>
+            </div>
+        </div>
+     <!-- TAG HOME SECTION END-->
+ 
+        <div class="container" id="Maps"></div>
+
+   <!--SET-DIV SECTION END-->
+   <div class="footer-sec">
+        <div class="container">
+            <div class="row">
+                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                           <div style="text-align:center;padding:5px;">
+                            Copyright   &copy; PPC 2014. All rights reserved.
+                           </div>
+                       </div>
+             </div>
        </div>
-     <!--FOOTER SECTION END-->
-      <!-- WE PUT SCRIPTS AT THE END TO LOAD PAGE FASTER-->
-     <!--CORE SCRIPTS PLUGIN-->
-    <script src="assets/js/jquery-1.11.1.min.js"></script>
-     <!--BOOTSTRAP SCRIPTS PLUGIN-->
-<script src="assets/js/bootstrap.js"></script>
-     <!--WOW SCRIPTS PLUGIN-->
-    <script src="assets/js/wow.js"></script>
-     <!--FLEXSLIDER SCRIPTS PLUGIN-->
-    <script src="assets/js/jquery.flexslider.js"></script>
-     <!--CUSTOM SCRIPTS -->
-    <script src="assets/js/custom.js"></script>
+    </div>
+     
 </body>
 
 </html>
